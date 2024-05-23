@@ -8,66 +8,73 @@
 }
 
 
-
-header{
-    width: 100%;
-    position: fixed;
-    z-index: 99;
-    background-color: #ffffff;
-    
-
-    .navbar{
-        @include flexCenter(space-between);
-
-        margin: 1rem;
-
-        @media (min-width: 1024px) {
-            margin: 1.5rem 6rem;            
-        }
-
-        .btn_mobile{
-            margin: 0.5rem;
-            padding: 0.5rem;
-            display: block;
-
-            @media (min-width: 1024px) {
-                display: none;                
-            }
-        }
-        
-        &__items{
-            display: none;
-
-            @media (min-width: 1024px) {
-                @include flexCenter;
-
-                list-style: none;
-    
-                &__item{
-                    @include flexCenter;
-                    padding: 0.5rem;
-    
-                    &__icon{
-                        margin: 0.5rem;
-                    }
-                }
-                
-            }
-        }
-    }
-}
-
 body{
+    @include flexCenter($justify:start, $direction:column);
     position: relative;
     overflow-x: hidden;
     background: url('../img/背景.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
-    /*
+    background-attachment: fixed;    
     max-width: 1280px;
     margin: 0 auto;
-    */
+
+    header{
+        width: 100%;
+        position: fixed;
+        z-index: 99;
+        background-color: #ffffff;
+        
+    
+        .navbar{
+            @include flexCenter(space-between);
+    
+            margin: 0.5rem 1rem;
+    
+            @media (min-width: 1024px) {
+                margin: 1rem 6rem;            
+            }
+
+            &__logo{
+                max-height: 3rem;
+            }
+    
+            .btn_mobile{
+                margin: 0.5rem;
+                padding: 0.5rem;
+                display: block;
+                font-size: 24px;
+    
+                @media (min-width: 1024px) {
+                    display: none;                
+                }
+            }
+            
+            &__items{
+                display: none;
+    
+                @media (min-width: 1024px) {
+                    @include flexCenter;
+
+                    list-style: none;
+                    gap: 0.75rem;
+        
+                    &__item{
+                        @include flexCenter;
+                        margin: 0.5rem;
+                        gap: 0.5rem;
+        
+                        &__icon{
+                            padding: 0.5rem;
+                            font-size: 24px;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+    
 }
 
 .hero{
@@ -75,92 +82,166 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: multiply;
+    width: 100%;
 
     @media (min-width: 1024px) {
-        height: 200vh;
-        width: 100%;   
+        height: 150vh;
     }
 
-
-    &__wrapper{
-
+    &__container{
         background: url('../img/禮物.png');
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: cover;   
+        background-position: center;
         height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-
-        @media (min-width: 1024px) {
-            flex-direction: row;
-        }
-
-
-        &__left{
+        width: 100%;  
+        
+        &__wrapper{
+            @include flexCenter($direction: column);
             width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
+    
             @media (min-width: 1024px) {
-                width: 50%;
+                flex-direction: row;
             }
-
-            .title_img{
-                margin: 1.5rem;
-                width: 50%;
-
-                @media (min-width: 1024px){
-                    width: auto;
-                }
-            }
-
-        }
-
-        &__right{
-            width: 100%;
-            height: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            position: relative;
-
-            @media (min-width: 1024px) {
-                width: 50%;
+    
+    
+            &__left{
+                width: 100%;
                 height: 100vh;
-            }
-            
-
-            .bestseller_svg{
-                display: none;
-
-                @media (min-width: 1024px){
-                    display: block;
-                }
-            }
-
-            .bestseller_imgs{
                 display: flex;
-                flex-direction: column;
+                justify-content: center;
                 align-items: center;
-
-                @media (min-width: 1024px){
-                    display: none;
+    
+                @media (min-width: 1024px) {
+                    width: 50%;
                 }
-
-                .bestseller_img{
-                    max-width: 200px;
+    
+                .title_img{
+                    max-width: 80%;
+    
+                    @media (min-width: 1024px){
+                        
+                    }
+                }
+    
+            }
+    
+            &__right{
+                width: 100%;
+                height: 200vh;
+                @include flexCenter($direction: column);
+    
+                @media (min-width: 1024px) {
+                    width: 50%;
+                    height: 100vh;      
+                }
+                
+    
+                .bestseller_svg{
+                    display: none;
+    
+                    @media (min-width: 1024px){
+                        display: block;
+                    }
+                }
+    
+                .bestseller_imgs{
+                    @include flexCenter($direction: column);
+    
+                    @media (min-width: 1024px){
+                        display: none;
+                    }
+    
+                    .bestseller_img{
+                        max-width: 80%;
+                    }
+                    
                 }
                 
             }
-            
+        }
+    
+        .coupons{
+            @include flexCenter($direction: column);
+            width: 100%;
+            height: 100vh;
+            margin: 3rem 0;
+    
+            @media (min-width: 1024px) {
+                flex-direction: row;
+                height: 20vh;
+            }
+    
+            img{  
+                max-width: 80%;
+                margin: 1rem;
+            }
         }
     }
 
+
+
+
 }
+
+.best-seller{
+    width: 100%;
+    height: 100vh;
+
+    .card-wrapper{
+        @include flexCenter($direction:column);
+
+        @media (min-width: 1024px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card{         
+            box-shadow: 7px 7px 10px rgba(91, 31, 31, 0.5);
+            max-width: 300px;
+            
+            &:hover{
+                cursor: pointer;
+            }
+
+            img{
+                max-width: 300px;
+            }
+
+            .card__img{
+                position: relative;
+
+                .gift{
+                    position: absolute;
+                    filter: drop-shadow(7px 7px 10px rgba(91, 31, 31, 0.5));
+                    transform: translate(-15%,-30%);
+                }
+            }
+
+
+            &__body{
+                background: #ffffff;
+                padding: 0.5rem;
+
+                &__price{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .btn_addtocart{
+                        padding: 0.5rem;
+                    }
+
+                    
+                }
+            }
+        }
+    }
+}
+
 
 
 
