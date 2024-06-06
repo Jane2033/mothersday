@@ -1,0 +1,17 @@
+@keyframes breathe {
+    0%, 100%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.4);
+    }
+}
+
+@mixin anim($name, $duration){
+    .#{$name}{
+        animation-name: $name;
+        animation-duration: $duration;
+    }
+
+}

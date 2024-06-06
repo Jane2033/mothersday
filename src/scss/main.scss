@@ -7,6 +7,15 @@
     flex-direction: $direction;
 }
 
+@keyframes breathe {
+    0%, 100%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.4);
+    }
+}
 
 body{
     @include flexCenter($justify:start, $direction:column);
@@ -16,7 +25,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;    
-    max-width: 1280px;
+    max-width: 1920px;
     margin: 0 auto;
 
     header{
@@ -107,13 +116,14 @@ body{
     
             &__left{
                 width: 100%;
-                height: 100vh;
+                height: 70vh;
                 display: flex;
                 justify-content: center;
                 align-items: center;
     
                 @media (min-width: 1024px) {
                     width: 50%;
+                    height: 100vh;
                 }
     
                 .title_img{
@@ -128,15 +138,17 @@ body{
     
             &__right{
                 width: 100%;
-                height: 200vh;
+                height: 40vh;
                 @include flexCenter($direction: column);
     
                 @media (min-width: 1024px) {
                     width: 50%;
-                    height: 100vh;      
+                    height: 100vh;  
                 }
                 
-    
+                #bestseller_svg *{
+                    transform-box: fill-box;
+                }
                 .bestseller_svg{
                     display: none;
     
@@ -144,31 +156,29 @@ body{
                         display: block;
                     }
                 }
-    
-                .bestseller_imgs{
-                    @include flexCenter($direction: column);
-    
-                    @media (min-width: 1024px){
-                        display: none;
-                    }
-    
-                    .bestseller_img{
-                        max-width: 80%;
-                    }
-                    
-                }
                 
+            }
+        }
+
+        .swiper {
+            width: 100%;
+            height: 300px;
+
+            @media (min-width: 1024px){
+                display: none;
+            }
+
+            .slide_img{
+                margin: 0 3rem;
+                width: 80%;
             }
         }
     
         .coupons{
-            @include flexCenter($direction: column);
-            width: 100%;
-            height: 100vh;
-            margin: 3rem 0;
+            display: none;
     
             @media (min-width: 1024px) {
-                flex-direction: row;
+                @include flexCenter;
                 height: 20vh;
             }
     
@@ -180,66 +190,6 @@ body{
     }
 
 
-
-
-}
-
-.best-seller{
-    width: 100%;
-    height: 100vh;
-
-    .card-wrapper{
-        @include flexCenter($direction:column);
-
-        @media (min-width: 1024px) {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-        }
-
-        .card{         
-            box-shadow: 7px 7px 10px rgba(91, 31, 31, 0.5);
-            max-width: 300px;
-            
-            &:hover{
-                cursor: pointer;
-            }
-
-            img{
-                max-width: 300px;
-            }
-
-            .card__img{
-                position: relative;
-
-                .gift{
-                    position: absolute;
-                    filter: drop-shadow(7px 7px 10px rgba(91, 31, 31, 0.5));
-                    transform: translate(-15%,-30%);
-                }
-            }
-
-
-            &__body{
-                background: #ffffff;
-                padding: 0.5rem;
-
-                &__price{
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-
-                    .btn_addtocart{
-                        padding: 0.5rem;
-                    }
-
-                    
-                }
-            }
-        }
-    }
 }
 
 
