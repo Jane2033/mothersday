@@ -127,7 +127,7 @@ body{
                 }
     
                 .title_img{
-                    max-width: 80%;
+                    max-width: 100%;
     
                     @media (min-width: 1024px){
                         
@@ -160,48 +160,35 @@ body{
             }
         }
 
-        .bestseller_mobile {
-            @include flexCenter($direction: column);
-
+        .swiper {
+            width: 100%;
+            
+            
             @media (min-width: 1024px){
                 display: none;
             }
 
-            &__top{
+            .swiper-slide{
                 @include flexCenter;
             }
 
-            &__bottom{
-                @include flexCenter;
-            }
-
-            .slide_img{
-                width: 100%;
+            img{
+                width: 80%;
             }
         }
     
         .coupons{
-            display: none;
-    
-            @media (min-width: 1024px) {
-                @include flexCenter;
-                height: 20vh;
-            }
+            @include flexCenter;
     
             img{  
-                max-width: 80%;
                 margin: 1rem;
+
+                @media (min-width: 1024px) {
+                    max-width: 50%;                
+                }
             }
         }
 
-        .coupons_mobile{
-            @include flexCenter;
-            height: 20vh;
-
-            @media (min-width: 1024px) {
-                display: none;
-            }            
-        }
     }
 
 
