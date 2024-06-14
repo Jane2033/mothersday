@@ -8,12 +8,40 @@
 }
 
 @keyframes breathe {
-    0%, 100%{
-        transform: scale(1);
+    0%{
+        transform: scale(0.9);
+        opacity: 0;
     }
 
     50%{
         transform: scale(1.4);
+    }
+
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes mymove{
+    0%{
+        transform: translateX(10%);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes cta {
+    0%,100%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.2);
     }
 }
 
@@ -138,6 +166,7 @@ body{
                 .title_img{
                     max-width: 70%;
                     margin-top: 6rem;
+                    animation: breathe 1s ease-in-out;
 
                     @media (min-width: 640px) {
                         max-width: 40%;
@@ -172,14 +201,40 @@ body{
                     height: 100vh;
                 }
                 
-                #bestseller_svg *{
-                    transform-box: fill-box;
-                }
+
                 .bestseller_svg{
                     display: none;
     
                     @media (min-width: 768px){
                         display: block;
+                    }
+
+                    #product1{
+                        animation: mymove 1s ease-in-out;
+                        animation-delay: 0.8s;
+                        animation-fill-mode: backwards;
+                    }
+                    #product2{
+                        animation: mymove 1s ease-in-out;
+                        animation-delay: 1.2s;
+                        animation-fill-mode: backwards;
+                    }
+                    #product3{
+                        animation: mymove 1s ease-in-out;
+                        animation-delay: 1.6s;
+                        animation-fill-mode: backwards;
+                    }
+                    #product4{
+                        animation: mymove 1s ease-in-out;
+                        animation-delay: 2s;
+                        animation-fill-mode: backwards;
+                    }
+
+                    #cta1, #cta2, #cta3, #cta4{
+                        animation: cta 1s infinite ease-in-out;
+                        animation-delay: 2.8s;
+                        transform-origin: center;
+                        transform-box: fill-box;
                     }
                 }
 
@@ -197,7 +252,6 @@ body{
 
                         .swiper-slide{
                             @include flexCenter;
-             
                         }
             
                         img{
@@ -260,7 +314,7 @@ body{
     width: 100%;
 
     @media (min-width: 640px) {        
-       
+
     }
 
     @media (min-width: 768px) {        
@@ -314,7 +368,7 @@ body{
             .row{
                 @include flexCenter($direction: column);
                 
-                background: url('../img/mobile_嚴選特搜.png');
+                background: url('../img/mobile_bg_box');
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center;
