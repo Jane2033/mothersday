@@ -21,7 +21,7 @@ body{
     @include flexCenter($justify:start, $direction:column);
     position: relative;
     overflow-x: hidden;
-    background: url('../img/背景.jpg');
+    background: url('../img/bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;    
@@ -87,47 +87,65 @@ body{
 }
 
 .hero{
-    background: url('../img/背景光點.png');
+    background: url('../img/bg_light.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: multiply;
     width: 100%;
+
+    @media (min-width: 768px) {
+        
+    }
 
     @media (min-width: 1024px) {
         height: 150vh;
     }
 
     &__container{
-        background: url('../img/禮物.png');
+        background: url('../img/bg_gift.png');
         background-repeat: no-repeat;
         background-size: cover;   
         background-position: center;
-        height: 100%;
         width: 100%;  
         
         &__wrapper{
             @include flexCenter($direction: column);
             width: 100%;
     
-            @media (min-width: 1024px) {
+            @media (min-width: 768px) {
                 flex-direction: row;
             }
     
     
             &__left{
                 width: 100%;
-                height: 55vh;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-    
-                @media (min-width: 1024px) {
+                height: 50vh;
+                @include flexCenter;
+
+                @media (min-width: 640px) {
+                    height: 100vh;
+                }
+
+                @media (min-width: 768px) {
                     width: 50%;
+                    height: 80vh;
+                }
+
+                @media (min-width: 1024px) {
                     height: 100vh;
                 }
     
                 .title_img{
-                    max-width: 100%;
+                    max-width: 70%;
+                    margin-top: 6rem;
+
+                    @media (min-width: 640px) {
+                        max-width: 40%;
+                    }
+    
+                    @media (min-width: 768px) {
+                        max-width: 80%;    
+                    }
     
                     @media (min-width: 1024px){
                         
@@ -138,12 +156,20 @@ body{
     
             &__right{
                 width: 100%;
-                height: 25vh;
+                height: 30vh;
                 @include flexCenter($direction: column);
+
+                @media (min-width: 640px) {
+                    height: 100vh;
+                }
+
+                @media (min-width: 768px) {
+                    width: 50%;
+                    height: 80vh;
+                }
     
                 @media (min-width: 1024px) {
-                    width: 50%;
-                    height: 100vh;  
+                    height: 100vh;
                 }
                 
                 #bestseller_svg *{
@@ -152,28 +178,53 @@ body{
                 .bestseller_svg{
                     display: none;
     
-                    @media (min-width: 1024px){
+                    @media (min-width: 768px){
                         display: block;
                     }
                 }
+
+                .swiper{
+                    width: 100%;
+                    position: relative;
+                    @include flexCenter;
+                    
+                    @media (min-width: 768px){
+                        display: none;
+                    }
+
+                    .swiper-wrapper{
+
+
+                        .swiper-slide{
+                            @include flexCenter;
+             
+                        }
+            
+                        img{
+                            width: 80%;
+                        }
+                    }
+
+                    .myswiper-button{
+                        position: absolute;
+                        width: 100%;
+                        z-index: 10;
+                        @include flexCenter($justify: space-between);
+
+                        .myswiper-button-prev{
+                            font-size: 24px;
+                            color: #ffffff;
+                            margin: 1rem;
+                        }
+    
+                        .myswiper-button-next{
+                            font-size: 24px;
+                            color: #ffffff;   
+                            margin: 1rem;                     
+                        }
+                    }
+                }
                 
-            }
-        }
-
-        .swiper {
-            width: 100%;
-            
-            
-            @media (min-width: 1024px){
-                display: none;
-            }
-
-            .swiper-slide{
-                @include flexCenter;
-            }
-
-            img{
-                width: 80%;
             }
         }
     
@@ -182,6 +233,10 @@ body{
     
             img{  
                 margin: 1rem;
+
+                @media (min-width: 768px) {
+                    max-width: 50%;                
+                }
 
                 @media (min-width: 1024px) {
                     max-width: 50%;                
@@ -193,6 +248,192 @@ body{
 
 
 }
+
+
+.section2{
+    @include flexCenter;
+    position: relative;
+    overflow-x: hidden;
+    background: url('../img/bg_ball.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+
+    @media (min-width: 640px) {        
+       
+    }
+
+    @media (min-width: 768px) {        
+        
+    }
+
+    @media (min-width: 1024px) {        
+        height: 200vh;   
+    }
+
+    &__container{
+        @include flexCenter($direction:column);
+        background: none;   
+        width: 100%;
+        height: 100%;
+        
+
+        @media (min-width: 640px) {
+            background: url('../img/bg_box.png');
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: contain;
+
+        }
+
+        .s2_title{
+            @include flexCenter;
+
+            img{
+                width: 80%;
+
+                @media (min-width: 768px) {
+                    width: 100%;
+
+                }
+            }
+        }
+
+        .special{
+            @include flexCenter($justify: start,$direction: column);
+            width: 100%;
+
+            @media (min-width: 640px) {
+
+            }
+
+            @media (min-width: 1024px) {
+
+            }
+
+            .row{
+                @include flexCenter($direction: column);
+                
+                background: url('../img/mobile_嚴選特搜.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                margin: 0 2rem;
+    
+                @media (min-width: 640px) {
+                    @include flexCenter;
+                    background: none;
+
+                }
+
+                @media (min-width: 768px) {
+
+                }
+
+                @media (min-width: 1024px) {
+                
+                }
+    
+                img{
+                    width: 80%;
+
+                    @media (min-width: 640px) {
+                        
+                    }
+    
+                    @media (min-width: 768px) {
+                        
+                    }
+    
+                    @media (min-width: 1024px) {
+                        
+                    }
+                }
+
+                a{
+                    @include flexCenter;
+                }
+            }
+        }
+    }
+}
+
+.section3{
+    @include flexCenter($direction: column);
+    width: 100%;
+
+
+    .s3_title{
+        
+        img{
+            width: 100%;
+        }
+    }
+
+    .card-wrapper{
+        width: 90%;
+        height: 100%;       
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+        grid-template-rows: repeat(4, 500px);
+        gap: 0.5rem;
+        
+        
+        a{
+            @include flexCenter;
+
+            .card{         
+                @include flexCenter($align-items: start,$direction: column);
+                max-width: 300px;
+                margin: 1rem;
+                justify-self: center;
+                
+                &:hover{
+                    cursor: pointer;
+                }
+    
+                img{
+                    max-width: 300px;
+                }
+    
+    
+                &__body{
+                    @include flexCenter($align_items: start, $direction: column);
+                    background: #ffffff;
+                    width: 100%;
+    
+                    &__title{
+                        margin: 1rem 1rem 0;
+                    }
+    
+                    &__info{
+                        @include flexCenter($justify: space-between);
+                        width: 100%;
+    
+                        &--price{
+                            @include flexCenter($align_items: baseline);
+                            margin: 1rem;
+                            p{
+                                margin-left: 1rem;
+                                text-decoration: line-through;
+                            }
+                        }
+    
+                        &--cta{
+                            padding: 0.5rem;
+                            margin: 0.5rem;
+                            font-size: 1.5rem;
+                        }
+    
+                        
+                    }
+                }
+            }
+        }
+
+    }
+}
+
 
 
 

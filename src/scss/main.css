@@ -89,6 +89,7 @@ a, a:visited, a:active {
 
 :root {
   --text-color: #231B33;
+  --title-color: #ffffff;
 }
 
 @keyframes breathe {
@@ -106,7 +107,7 @@ body {
   flex-direction: column;
   position: relative;
   overflow-x: hidden;
-  background: url("../img/背景.jpg");
+  background: url("../img/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -172,7 +173,7 @@ body header .navbar__items {
 }
 
 .hero {
-  background: url("../img/背景光點.png");
+  background: url("../img/bg_light.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: multiply;
@@ -184,11 +185,10 @@ body header .navbar__items {
   }
 }
 .hero__container {
-  background: url("../img/禮物.png");
+  background: url("../img/bg_gift.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100%;
   width: 100%;
 }
 .hero__container__wrapper {
@@ -198,38 +198,70 @@ body header .navbar__items {
   flex-direction: column;
   width: 100%;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .hero__container__wrapper {
     flex-direction: row;
   }
 }
 .hero__container__wrapper__left {
   width: 100%;
-  height: 55vh;
+  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+}
+@media (min-width: 640px) {
+  .hero__container__wrapper__left {
+    height: 100vh;
+  }
+}
+@media (min-width: 768px) {
+  .hero__container__wrapper__left {
+    width: 50%;
+    height: 80vh;
+  }
 }
 @media (min-width: 1024px) {
   .hero__container__wrapper__left {
-    width: 50%;
     height: 100vh;
   }
 }
 .hero__container__wrapper__left .title_img {
-  max-width: 100%;
+  max-width: 70%;
+  margin-top: 6rem;
+}
+@media (min-width: 640px) {
+  .hero__container__wrapper__left .title_img {
+    max-width: 40%;
+  }
+}
+@media (min-width: 768px) {
+  .hero__container__wrapper__left .title_img {
+    max-width: 80%;
+  }
 }
 .hero__container__wrapper__right {
   width: 100%;
-  height: 25vh;
+  height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-@media (min-width: 1024px) {
+@media (min-width: 640px) {
+  .hero__container__wrapper__right {
+    height: 100vh;
+  }
+}
+@media (min-width: 768px) {
   .hero__container__wrapper__right {
     width: 50%;
+    height: 80vh;
+  }
+}
+@media (min-width: 1024px) {
+  .hero__container__wrapper__right {
     height: 100vh;
   }
 }
@@ -239,27 +271,51 @@ body header .navbar__items {
 .hero__container__wrapper__right .bestseller_svg {
   display: none;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .hero__container__wrapper__right .bestseller_svg {
     display: block;
   }
 }
-.hero__container .swiper {
+.hero__container__wrapper__right .swiper {
   width: 100%;
-}
-@media (min-width: 1024px) {
-  .hero__container .swiper {
-    display: none;
-  }
-}
-.hero__container .swiper .swiper-slide {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
-.hero__container .swiper img {
+@media (min-width: 768px) {
+  .hero__container__wrapper__right .swiper {
+    display: none;
+  }
+}
+.hero__container__wrapper__right .swiper .swiper-wrapper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.hero__container__wrapper__right .swiper .swiper-wrapper img {
   width: 80%;
+}
+.hero__container__wrapper__right .swiper .myswiper-button {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.hero__container__wrapper__right .swiper .myswiper-button .myswiper-button-prev {
+  font-size: 24px;
+  color: #ffffff;
+  margin: 1rem;
+}
+.hero__container__wrapper__right .swiper .myswiper-button .myswiper-button-next {
+  font-size: 24px;
+  color: #ffffff;
+  margin: 1rem;
 }
 .hero__container .coupons {
   display: flex;
@@ -270,8 +326,172 @@ body header .navbar__items {
 .hero__container .coupons img {
   margin: 1rem;
 }
+@media (min-width: 768px) {
+  .hero__container .coupons img {
+    max-width: 50%;
+  }
+}
 @media (min-width: 1024px) {
   .hero__container .coupons img {
     max-width: 50%;
   }
+}
+
+.section2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+  overflow-x: hidden;
+  background: url("../img/bg_ball.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .section2 {
+    height: 200vh;
+  }
+}
+.section2__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: none;
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 640px) {
+  .section2__container {
+    background: url("../img/bg_box.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+  }
+}
+.section2__container .s2_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.section2__container .s2_title img {
+  width: 80%;
+}
+@media (min-width: 768px) {
+  .section2__container .s2_title img {
+    width: 100%;
+  }
+}
+.section2__container .special {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.section2__container .special .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url("../img/mobile_嚴選特搜.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 2rem;
+}
+@media (min-width: 640px) {
+  .section2__container .special .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background: none;
+  }
+}
+.section2__container .special .row img {
+  width: 80%;
+}
+.section2__container .special .row a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.section3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.section3 .s3_title img {
+  width: 100%;
+}
+.section3 .card-wrapper {
+  width: 90%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(4, 500px);
+  gap: 0.5rem;
+}
+.section3 .card-wrapper a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.section3 .card-wrapper a .card {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 1rem;
+  justify-self: center;
+}
+.section3 .card-wrapper a .card:hover {
+  cursor: pointer;
+}
+.section3 .card-wrapper a .card img {
+  max-width: 300px;
+}
+.section3 .card-wrapper a .card__body {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  background: #ffffff;
+  width: 100%;
+}
+.section3 .card-wrapper a .card__body__title {
+  margin: 1rem 1rem 0;
+}
+.section3 .card-wrapper a .card__body__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.section3 .card-wrapper a .card__body__info--price {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-direction: row;
+  margin: 1rem;
+}
+.section3 .card-wrapper a .card__body__info--price p {
+  margin-left: 1rem;
+  text-decoration: line-through;
+}
+.section3 .card-wrapper a .card__body__info--cta {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  font-size: 1.5rem;
 }/*# sourceMappingURL=main.css.map */
