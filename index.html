@@ -16,16 +16,24 @@
   <body>
     <header>
       <nav class="navbar">
-        <img src="./src/img/logo.jpg" class="navbar__logo">
-        <i class="bi bi-list btn_mobile"></i>
-        <ul class="navbar__items">
-          <li class="navbar__items__item">
-            <i class="bi bi-person-circle navbar__items__item__icon"></i>
-            <a href="https://chiliaplus3557158.cyberbiz.co/account/login">登入/註冊</a>
+        <div class="navbar__main">
+          <a href="#hero">
+            <img src="./src/img/logo.jpg" class="navbar__main__logo">
+          </a>
+          <a class="navbar__main__item" href="https://chiliaplus3557158.cyberbiz.co/account/login" target="_blank">
+            <i class="bi bi-person-circle navbar__main__item__icon"></i>
+            <p class="navbar__main__item__text">登入/註冊</p>
+          </a>
+        </div>        
+        <ul class="navbar__sub">
+          <li class="navbar__sub__item">
+            <a href="#hero">明星商品</a>
           </li>
-          <li class="navbar__items__item">
-            <i class="bi bi-cart navbar__items__item__icon"></i>
-            <a href="https://chiliaplus3557158.cyberbiz.co/">購物車</a>
+          <li class="navbar__sub__item">
+            <a href="#section2">嚴選特搜</a>
+          </li>
+          <li class="navbar__sub__item">
+            <a href="#section3">必掃清單</a>
           </li>
         </ul>
       </nav>
@@ -822,7 +830,7 @@
       </div>
     </div>
 <!--section2-->    
-    <div class="section2">
+    <div id="section2" class="section2">
       <div class="section2__container">
         <div class="s2_title">
           <img src="./src/img/嚴選特搜.png" alt="嚴選特搜">
@@ -856,7 +864,7 @@
       </div>
     </div>
 <!--section3-->
-    <div class="section3">
+    <div id="section3" class="section3">
       <div class="s3_title">
         <img src="./src/img/必掃清單.png" alt="必掃清單">
       </div>
@@ -1043,6 +1051,84 @@
         </a>
       </div>
     </div>
+<!--footer-->
+    <footer>
+      <div class="footer__content">
+        <div class="contact">
+          <h6 class="footer__title">聯絡我們</h6>
+          <ul class="contact__items">
+            <li class="contact__items__item">
+              <i class="bi bi-telephone-fill contact__items__item__icon"></i>
+              <p>03-352-0000</p>
+            </li>
+            <li class="contact__items__item">
+              <i class="bi bi-inbox-fill contact__items__item__icon"></i>
+              <p>03-352-1111</p>
+            </li> 
+            <li class="contact__items__item">
+              <i class="bi bi-pin-map-fill contact__items__item__icon"></i>
+              <p>桃園市桃園區</p>
+            </li> 
+            <li class="contact__items__item">
+              <i class="bi bi-clock-fill contact__items__item__icon"></i>
+              <p>09：00～17：00</p>
+            </li>          
+          </ul>
+        </div> 
+        <div class="aboutus">
+          <h6 class="footer__title">關於我們</h6>
+          <ul class="aboutus__items">
+            <li class="aboutus__items__item">
+              <a href="https://reurl.cc/1vWL2G" target="_blank">查詢產品</a>
+            </li>
+            <li class="aboutus__items__item">
+              <a href="https://reurl.cc/KeozMm" target="_blank">品牌故事</a>
+            </li> 
+            <li class="aboutus__items__item">
+              <a href="https://reurl.cc/EjvNog" target="_blank">隱私政策</a>
+            </li> 
+            <li class="aboutus__items__item">
+              <a href="https://reurl.cc/aqDbVY" target="_blank">免責聲明</a>
+            </li>          
+          </ul>
+        </div>
+        <div class="aboutus">
+          <h6 class="footer__title">會員購物</h6>
+          <ul class="aboutus__items">
+            <li class="aboutus__items__item">
+              <a href="https://reurl.cc/2YOAma" target="_blank">我的帳戶</a>
+            </li>
+            <li class="aboutus__items__item">
+              <a href="https://reurl.cc/WxoYvO" target="_blank">會員制度</a>
+            </li>  
+            <li class="aboutus__items__item">
+              <a href="https://reurl.cc/r9Vb6N" target="_blank">購物須知</a>
+            </li>  
+            <li class="aboutus__items__item">
+              <a href="https://reurl.cc/XGbrqE" target="_blank">退貨說明</a>
+            </li>          
+          </ul>
+        </div> 
+        <div class="follow">
+          <h6 class="footer__title">追蹤我們</h6>
+          <ul class="follow__items">
+            <li class="follow__items__item">
+              <a href="https://www.facebook.com/Chiliamd7158/" target="_blank"><i class="bi bi-facebook"></i></a>
+            </li>
+            <li class="follow__items__item">
+              <a href="https://www.instagram.com/chili_amd_7158/" target="_blank"><i class="bi bi-instagram"></i></a>
+            </li> 
+            <li class="follow__items__item">
+              <a href="https://reurl.cc/VzoZzA" target="_blank"><i class="bi bi-line"></i></a>
+            </li>          
+          </ul>
+        </div>
+      </div>
+      <div class="copy-right">
+        <p>Copyright © 綺麗Chili-Aplus All Rights Reserved.</p>
+      </div>        
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
