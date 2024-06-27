@@ -294,6 +294,15 @@ body{
                         transform-origin: center;
                         transform-box: fill-box;
                     }
+
+                    #product1, #product2, #product3, #product4{
+                        transition: all 0.3s;
+
+                        &:hover{
+                            transform: scale(1.03);
+                            filter: drop-shadow(0px 0px 10px #ffffff);
+                        }
+                    }
                 }
 
                 .swiper{
@@ -370,6 +379,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+    margin: 2rem 0;
 
     @media (min-width: 640px) {        
 
@@ -385,35 +395,40 @@ body{
 
     &__container{
         @include flexCenter($direction:column);
-        background: none;   
         width: 100%;
         height: 100%;
-        
+        background: none;        
 
         @media (min-width: 640px) {
-            background: url('../img/bg_box.png');
+            /*background: url(../img/outline.png);*/
             background-repeat: no-repeat;
-            background-position: top;
+            background-position: center;
             background-size: contain;
-
         }
 
         .s2_title{
             @include flexCenter;
+            background: url(../img/bg_必掃清單.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 100%;
 
             img{
                 width: 80%;
+                
 
                 @media (min-width: 768px) {
-                    width: 100%;
+                    width: 30%;
 
                 }
             }
         }
 
         .special{
-            @include flexCenter($justify: start,$direction: column);
-            width: 100%;
+            @include flexCenter($justify: start,$direction: column);            
+            background: radial-gradient(at 50% 50%, #DF6969 10%, #FFDBDE 100%);
+            position: relative;
 
             @media (min-width: 640px) {
 
@@ -423,18 +438,39 @@ body{
 
             }
 
+            &::before{
+                content: '';
+                width: 100%;
+                height: 100%;
+                border: solid 2px #ffffff;
+                position: absolute;
+                filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
+
+            }
+
+            #product5, #product6, #product7, #product8, #product9, #product10{
+                transition: all 0.3s;
+
+                &:hover{
+                    transform: scale(1.03);
+                    filter: drop-shadow(0px 0px 10px #ffffff);
+                }
+            }
+
+            #cta5, #cta6, #cta7, #cta8, #cta9, #cta10{
+                animation: cta 1s infinite ease-in-out;                
+                transform-origin: center;
+                transform-box: fill-box;
+            }
+
             .row{
                 @include flexCenter($direction: column);
+                position: relative;
                 
-                background: url('../img/mobile_bg_box');
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center;
-                margin: 0 2rem;
     
                 @media (min-width: 640px) {
                     @include flexCenter;
-                    background: none;
+                    
 
                 }
 
@@ -445,9 +481,10 @@ body{
                 @media (min-width: 1024px) {
                 
                 }
-    
-                img{
-                    width: 80%;
+
+                a{
+                    @include flexCenter;
+                    margin: 1rem;
 
                     @media (min-width: 640px) {
                         
@@ -461,10 +498,6 @@ body{
                         
                     }
                 }
-
-                a{
-                    @include flexCenter;
-                }
             }
         }
     }
@@ -473,12 +506,23 @@ body{
 .section3{
     @include flexCenter($direction: column);
     width: 100%;
+    margin: 2rem 0;
 
 
     .s3_title{
-        
-        img{
-            width: 100%;
+        @include flexCenter;
+        background: url(../img/bg_必掃清單.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        img{            
+            width: 80%;
+            
+
+            @media (min-width: 768px) {
+                width: 30%;
+            }
         }
     }
 
@@ -499,9 +543,14 @@ body{
                 max-width: 300px;
                 margin: 1rem;
                 justify-self: center;
+                transition: all 0.3s;
+                
                 
                 &:hover{
                     cursor: pointer;
+                    transform: scale(1.03);
+                    box-shadow: 0px 0px 20px #ffffff;    
+                    
                 }
     
                 img{
@@ -601,8 +650,19 @@ footer{
         }
     }
 
+    .otherinfo{
+        @include flexCenter($justify: start);
+        width: 100%;
+
+        @media (min-width: 1024px) {
+            @include flexCenter($justify: space-between, $align-items: start);
+            width: 30%;            
+        }
+    }
+
     .aboutus{
         @include flexCenter($align_items: start ,$direction: column);
+        margin-right: 2rem;
         &__items{
             margin: 0.75rem 0 0;
             
