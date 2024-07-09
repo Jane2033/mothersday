@@ -31,3 +31,14 @@ gsap.from('.section3',{
     y: 200,
     ease: 'power1.inOut',
 });
+
+gsap.from('.bar-up',{
+    scrollTrigger: {
+        trigger: ".hero",
+        start: "top -=100",
+        end: "top -=200",
+        toggleActions: "play none reverse none"  
+    },
+    opacity: 0,
+    ease: 'power1.inOut',
+});
